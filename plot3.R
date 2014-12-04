@@ -1,4 +1,4 @@
-# plot1.R
+# plot3.R
 # Coursera Course - Exploratory Data Analysis (exdata-016)
 # Project 1
 # Submitted by:
@@ -71,12 +71,14 @@ raw_data$Sub_metering_2 <- as.numeric(raw_data$Sub_metering_2)
 sub_data <- subset(raw_data, raw_data$Date >= "2007-02-01" & raw_data$Date <= "2007-02-02")
 
 # send plot to the png device...comment this out to view on screen
-png(filename = "plot1.png", width = 480, height = 480, units = "px")
+png(filename = "plot3.png", width = 480, height = 480, units = "px")
 
-hist(sub_data$Global_active_power,
-     col = "red",
-     xlab = "Global Active Power (kilowatts)",
-     main = "Global Active Power")
+with(sub_data, plot(DateTime, Sub_metering_1, xlab = "", ylab = "Energy sub metering", type = "n"))
+with(sub_data, points(DateTime, Sub_metering_1, col = "black", type = "l"))
+with(sub_data, points(DateTime, Sub_metering_2, col = "red", type = "l"))
+with(sub_data, points(DateTime, Sub_metering_3, col = "blue", type = "l"))
+legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
 
 # comment this out to view on screen
 dev.off()
