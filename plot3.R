@@ -21,7 +21,7 @@ rm(list=ls())
 # Clear Console:
 cat("\014")
 
-setwd("C:/Users/werner/Dropbox/Programming/Coursera/DataScience_JH_specialization/4_Exploratory_Data_Analysis/Project1")
+# setwd("SET THIS TO YOUR WORKING DIRECTORY")
 fileurl <- "data/household_power_consumption.txt"
 
 # the script checks to see if a file exists in a subfolder called "data" off of the current working directory,
